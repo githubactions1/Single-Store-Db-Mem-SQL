@@ -1,0 +1,58 @@
+                                                                 Single STore DB / MemSQL
+                                                                  =====================
+
+License Key For the Single Store DB : 
+=================================>>>>>>
+
+BGI0MzI2ZTY2ZmVmYTQyMjI5MzU3ZGRlN2ZkZTNmZGFhAAAAAAAAAAAEAAAAAAAAACgwNQIYQkcXb0Cz0syOuEka1orkx7ocZXOUjCgJAhkAksMypMNnasROSL4C1kdcNSKaY/LmbvgZAA==
+Version Used is ----> 8.1.24 
+
+Ports Used for Master & Leaf
+========================>>>>>>
+
+Master Aggregator --> 3306
+Leaf Aggregator --> 3307
+
+
+YAML Representation of Cluster
+========================>>>>>>>>>
+
+license: BGI0MzI2ZTY2ZmVmYTQyMjI5MzU3ZGRlN2ZkZTNmZGFhAAAAAAAAAAAEAAAAAAAAACgwNQIYQkcXb0Cz0syOuEka1orkx7ocZXOUjCgJAhkAksMypMNnasROSL4C1kdcNSKaY/LmbvgZAA==
+high_availability: false
+root_password: Digit@l456
+memsql_server_version: 8.1.24
+hosts:
+  - hostname: 202.53.92.35
+    nodes:
+      - role: Master
+        config:
+          port: 3306
+      - role: Leaf
+        config:
+          port: 3307
+    localhost: true
+
+
+Steps to Install the Single Store Db in Centos-7 Server (Online) : 
+=========================================================>>>>>>>>>>>>>
+
+
+1. sudo yum upadte -y
+2. sudo yum install yum-utils
+3. sudo yum-config-manager --add-repo https://release.memsql.com/production/rpm/x86_64/repodata/memsql.repo
+4. sudo yum install -y singlestoredb-toolbox singlestore-client
+5. sudo yum repolist
+6. rpm -q which
+7. sudo yum install -y which
+8. sdb-deploy ui
+   Here, Select 'Yes' and we will get the link like below one : 
+   http://localhost:8081/#utxOwZ0jdsCD4YO6KHmgmPwfLTfG60s3SvWW0Iq9GM8=
+In the Place of localhost, replace it with our `Server-IP`
+And,
+  Paste this in the Browser ---> http://202.53.92.35:8081/#utxOwZ0jdsCD4YO6KHmgmPwfLTfG60s3SvWW0Iq9GM8=
+
+I will get error because the firewall is enabled i.e. ---> `systemctl status firewalld`
+If it is in Active state, Remove it i.e. ---> `systemctl stop firewalld` && `Check the status again`
+Now, Load it in the browser. We Should get the Single Store DB page from here we can configure it.
+
+THIS IS OF THE ONLINE INSTALLATION OF THE SINGLE STORE DB IN THE CENTOS-7 SERVER.
