@@ -1,5 +1,7 @@
                                                                  Single STore DB / MemSQL
                                                                   =====================
+For Accessing the File Open the below Link, Here we can see all the Steps:
+https://docs.singlestore.com/db/v8.1/deploy/linux/ui-online-rpm/
 
 License Key For the Single Store DB : 
 =================================>>>>>>
